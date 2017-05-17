@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="refresh" content="5" />
+		<title> Gestionnaire de liens  </title>
+		
+		<!-- styling -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	 </head>
+	<body>
+	<h1><center>Conditions of my Garden</center></h1><br/><br/>
+	<div class="condition">
+	<center><h2>
+	Air Temperature : {{condition.temperature}}<br/><br/>
+	Air humidity : {{condition.air_humidity}}<br/><br/>
+	Earth humidity : {{condition.earth_humidity}}<br/><br/>
+	Earth Temperature : {{condition.earth_temperature}}<br/><br/><br/>
+	{%if  pump %}
+	Pump activated !
+	{%endif%}
+	{%if not pump%}
+	Pump deactivated !
+	{%endif%}
+	</h2>
+	<form name="addicone" action="/activate/" method="Post" onsubmit="return validateForm()">
+	<input type='hidden' name="pompe" value="1">
+	<input type="submit" value="Activate pump">
+	</form>
+	</center>
+	</div>
+	 </body>
+</html>
