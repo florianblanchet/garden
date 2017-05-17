@@ -1,0 +1,4 @@
+Flask==0.12
+requests==2.12.4
+peewee==2.9.2
+Jinja2==2.8
